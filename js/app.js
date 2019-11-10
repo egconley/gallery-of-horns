@@ -1,15 +1,5 @@
 'use strict';
 
-// alert('Hello');
-
-/*
-    "image_url": "http://3.bp.blogspot.com/_DBYF1AdFaHw/TE-f0cDQ24I/AAAAAAAACZg/l-FdTZ6M7z8/s1600/Unicorn_and_Narwhal_by_dinglehopper.jpg",
-    "title": "UniWhal",
-    "description": "A unicorn and a narwhal nuzzling their horns",
-    "keyword": "narwhal",
-    "horns": 1
-*/
-
 let allHorns = [];
 
 function Horn(horn) {
@@ -36,6 +26,8 @@ $('#page-2').on('click', getPage2Images);
 
 function getPage1Images() {
   $('#append-here').empty();
+  $('select').empty();
+  $('select').append(`<option value="default">Filter by Keyword</option>`);
   $.get('./data/page-1.json').then(data => {
     // .get is a promise because it's a data fetching thing.
     // .get is going to go off and grab the data, and when that finishes, THEN, it's going to take the contents retrieved from page-1.json and give it to the function defined in .then ... and we're call all that data passed into .then "data".
@@ -43,7 +35,8 @@ function getPage1Images() {
       // console.log(item);
       let horn = new Horn(item);
       // horn.render() only works because of return template(this) above in the protype.
-      $('#append-here').append(horn.render())
+      $('#append-here').append(horn.render());
+      $('select').append(`<option value=${horn.keyword}>${horn.keyword}</option>`);
     })
     // console.log(data[1]);
   });
@@ -51,10 +44,13 @@ function getPage1Images() {
 
 function getPage2Images() {
   $('#append-here').empty();
+  $('select').empty();
+  $('select').append(`<option value="default">Filter by Keyword</option>`);
   $.get('./data/page-2.json').then(data => {
     data.forEach(item => {
       let horn = new Horn(item);
-      $('#append-here').append(horn.render())
+      $('#append-here').append(horn.render());
+      $('select').append(`<option value=${horn.keyword}>${horn.keyword}</option>`);
     })
   });
 }
