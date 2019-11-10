@@ -26,8 +26,8 @@ $('#page-2').on('click', getPage2Images);
 
 $('select').on('change', function(){
   let pickedThing = $(this).val()
-  $(`div[id=append-here`).children().css('background-color', 'red');
-  $(`div[class=${pickedThing}]`).parent().css('background-color', 'yellow');
+  $(`div[id=append-here`).children().hide();
+  $(`div[class=${pickedThing}]`).parent().show();
 })
 
 function getPage1Images() {
