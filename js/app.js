@@ -13,7 +13,7 @@ function Horn(horn) {
 
 Horn.prototype.render = function() {
   // get the template
-  console.log('Hello this is render', this);
+  // console.log('Hello this is render', this);
   let source = $('#photo-template').html();
   // compile the template
   let template = Handlebars.compile(source);
@@ -23,6 +23,12 @@ Horn.prototype.render = function() {
 
 $('#page-1').on('click', getPage1Images);
 $('#page-2').on('click', getPage2Images);
+
+$('select').on('change', function(){
+  let pickedThing = $(this).val()
+  $(`div[id=append-here`).children().hide();
+  $(`div[class=${pickedThing}]`).parent().show();
+})
 
 function getPage1Images() {
   $('#append-here').empty();
