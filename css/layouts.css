@@ -8,14 +8,17 @@ header {
   position: fixed;
 }
 
+ul {
+  list-style: none;
+}
 
 #photo-template {
   display: flex;
   text-align: center;
   flex-direction: column;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  align-items: baseline;
+  /* flex-wrap: wrap; */
+  justify-content: center;
+  align-items: center;
   border: 1px solid red;
   margin: 0.5em;
   padding: 0.5em;
