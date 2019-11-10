@@ -4,6 +4,10 @@ main {
   justify-content: flex-end;
 }
 
+h1, h2 {
+  font-family: 'Courier New', Courier, monospace;
+}
+
 header {
   position: fixed;
 }
@@ -19,7 +23,7 @@ ul {
   /* flex-wrap: wrap; */
   justify-content: center;
   align-items: center;
-  border: 1px solid red;
+  border: 2px solid yellow;
   margin: 0.5em;
   padding: 0.5em;
   width: 400px;
