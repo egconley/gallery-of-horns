@@ -1,0 +1,35 @@
+main {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+}
+
+header {
+  position: fixed;
+}
+
+
+#photo-template {
+  display: flex;
+  text-align: center;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: baseline;
+  border: 1px solid red;
+  margin: 0.5em;
+  padding: 0.5em;
+  width: 400px;
+}
+
+/* CROPPING IMAGES WITHOUT DISTORTION: https://stackoverflow.com/questions/19414856/how-can-i-make-all-images-of-different-height-and-width-the-same-via-css */
+
+.crop {
+  height: 200px;
+  width: 300px;
+  overflow: hidden;
+ }
+ .crop img {
+  height: auto;
+  width: 200px;
+ }

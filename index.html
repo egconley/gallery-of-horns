@@ -5,10 +5,14 @@
   <head>
     <title>The Gallery of Horns</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/base.css">
+    <link rel="stylesheet" href="./css/layouts.css">
+    <link rel="stylesheet" href="./css/modules.css">
     <script id="photo-template" type="text/x-handlebars-template">
       <section id="photo-template">
         <h2>{{title}}</h2>
-        <img src="{{image_url}}" alt="">
+        <ul class="crop"><img src="{{image_url}}" alt=""></ul>
         <p>{{description}}</p>
       </section>
     </script>
@@ -21,14 +25,13 @@
         <button type="button" id="page-2">Page 2</button>
       </nav>
       <select>
-        <option value="default">Filter by Keyword</option>
+        <option value="default" id="defaultOption">Filter by Keyword</option>
       </select>
     </header>
     <main>
       <body>
         <div id="append-here"></div>
       </body>
-
     </main>
     <footer>
       &copy; 2019 Code Fellows
