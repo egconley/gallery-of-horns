@@ -31,14 +31,31 @@ Horn.prototype.render = function() {
   return template(this);
 }
 
-$.get('./data/page-1.json').then(data => {
-  // .get is a promise because it's a data fetching thing.
-  // .get is going to go off and grab the data, and when that finishes, THEN, it's going to take the contents retrieved from page-1.json and give it to the function defined in .then ... and we're call all that data passed into .then "data".
-  data.forEach(item => {
-    // console.log(item);
-    let horn = new Horn(item);
-    // horn.render() only works because of return template(this) above in the protype.
-    $('#append-here').append(horn.render())
-  })
-  // console.log(data[1]);
-});
+$('#page-1').on('click', getPage1Images);
+$('#page-2').on('click', getPage2Images);
+
+function getPage1Images() {
+  $('#append-here').empty();
+  $.get('./data/page-1.json').then(data => {
+    // .get is a promise because it's a data fetching thing.
+    // .get is going to go off and grab the data, and when that finishes, THEN, it's going to take the contents retrieved from page-1.json and give it to the function defined in .then ... and we're call all that data passed into .then "data".
+    data.forEach(item => {
+      // console.log(item);
+      let horn = new Horn(item);
+      // horn.render() only works because of return template(this) above in the protype.
+      $('#append-here').append(horn.render())
+    })
+    // console.log(data[1]);
+  });
+}
+
+function getPage2Images() {
+  $('#append-here').empty();
+  $.get('./data/page-2.json').then(data => {
+    data.forEach(item => {
+      let horn = new Horn(item);
+      $('#append-here').append(horn.render())
+    })
+  });
+}
+
