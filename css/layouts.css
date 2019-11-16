@@ -29,14 +29,6 @@ ul {
   width: 400px;
 }
 
-/* CROPPING IMAGES WITHOUT DISTORTION: https://stackoverflow.com/questions/19414856/how-can-i-make-all-images-of-different-height-and-width-the-same-via-css */
-
-.crop {
-  height: 200px;
-  width: 300px;
-  overflow: hidden;
- }
- .crop img {
-  height: auto;
-  width: 200px;
- }
+ img {
+  max-width: 100%;
+}
